@@ -1,0 +1,381 @@
+@font-face {
+  font-family: 'swell-regular';
+  src: url('fonts/swell-regular.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrickSans';
+  src: url('fonts/Bricksans-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CindieMono';
+  src: url('fonts/CindieMono-D.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Colombo';
+  src: url('fonts/Colombo.ttf') format('opentype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vieytes';
+  src: url('fonts/Vieytes.ttf') format('opentype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+/* ========== Global Styles ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background: black;
+  color: white;
+  font-family: 'Colombo', sans-serif;
+  z-index: 9999;
+}
+
+/* ========== Section Base ========== */
+section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 10%;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+/* ========== Home Section ========== */
+.home-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.name {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800vw; /* scales with screen width */
+  max-width: 3500px;
+  z-index: 1;
+  opacity: 1;
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+/* Glowing pulse animation */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 10px #ffffff);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 30px #ffffff);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+#tagline {
+  position: absolute;
+  top: 1800px;
+  left: -0.5%;
+  color: rgba(255, 255, 255, 0.532);
+  font-size: 88px;
+  font-family: 'Colombo', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+/* ========== About Section ========== */
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 0px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 68px;
+  text-align: justify;
+  line-height: 1.8;
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+.about-title {
+  font-size: 200px;
+  display: flex;
+  justify-content: center;
+  color: #ffffff;
+  text-shadow: aqua 0 0 200px;
+  font-family: 'swell-regular', sans-serif;
+  letter-spacing: 0;
+  margin-bottom: 40px;
+}
+
+.about-content-fade-in {
+  width: 100%;
+  font-size: 70px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.418);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: justify;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  padding: 0 4%; /* gentle horizontal padding */
+}
+
+/* ========== Fade-in Animation (Removable) ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 1400px) {
+  .about-title {
+    font-size: 120px;
+  }
+  .about-content-fade-in {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 180px 6%;
+  }
+  .about-title {
+    font-size: 80px;
+  }
+  .about-content-fade-in {
+    font-size: 40px;
+    line-height: 1.6;
+  }
+}
+
+/* ========== Skills Section ========== */
+#skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10%;
+  color: white;
+}
+
+#skills h2 {
+  font-family: 'swell-regular', sans-serif;
+  font-size: 200px;
+  display: flex;
+  padding-top: 0%;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+#skills-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  height: 600px;
+}
+
+/* Keep original working dimensions */
+.sphere-viewport {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+  transform: scale(6.5);
+  margin: 0 auto;
+}
+
+.sphere {
+  position: absolute;
+  top: 49%;
+  left: 45.5%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px aqua;
+}
+
+.tag {
+  position: absolute;
+  transform-style: preserve-3d;
+  color: white;
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* ===== NAVBAR STYLES ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.074);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
+  transition: background 0.3s ease;
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px 1%;
+}
+
+.logo {
+  font-family: 'swell-regular', sans-serif;
+  font-size: 48px;
+  color: white;
+  letter-spacing: 2px;
+  text-shadow: 0 0 15px cyan;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.393);
+  font-size: 58px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-links li a:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 10px rgb(255, 255, 255);
+  font-size: 62px;
+}
+
+.nav-links li a.active {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 15px cyan;
+  font-size: 78px;
+}
+
+/* ===== Responsive Menu ===== */
+.menu-toggle {
+  display: none;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 950px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    transition: right 0.4s ease;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .logo {
+    font-size: 38px;
+  }
+
+  .nav-links li a {
+    font-size: 34px;
+  }
+}
+
+/* ========== Background Canvas ========== */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999; /* keeps it behind everything */
+  pointer-events: none; /* prevents blocking interaction */
+  overflow: hidden ;
+}
+
+/* ========== Section Entrance Animation (Can Remove if Not Needed) ========== */
+section {
+  opacity: 1;
+  transform: translateY(80px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  will-change: opacity, transform;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section.visible:nth-of-type(odd) {
+  transition-delay: 0.2s;
+}
+
+section.visible:nth-of-type(even) {
+  transition-delay: 0.4s;
+}
+
+
+/* ===== Fix end-of-page scroll issue ===== */
+#contact {
+  min-height: auto !important;
+  height: 100vh !important;          /* Fit exactly one screen */
+  padding-top: 60px !important;      /* small top space for navbar */
+  padding-bottom: 0 !important;      /* remove bottom excess */
+  overflow: hidden !important;       /* prevent inner elements from pushing page */
+}
+
+footer, section:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}

@@ -1,0 +1,1085 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melvin V | 3D & Full-Stack Developer</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projectstyle.css">
+  <link rel="stylesheet" href="contactstyle.css">
+
+</head>
+<body>
+  
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-container">
+    <h1 class="logo" style="font-family: 'Colombo',sans-serif; font-size: 80px;">Portfolio</h1>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="menu-toggle">&#9776;</div>
+  </div>
+</nav>
+
+
+  <!-- ===== HOME SECTION ===== -->
+  <section id="home" class="home-section">
+    <!-- <img class="name" src="bg/Land_img.png" alt="Background"> -->
+    <h1 id="greeting" style="font-family: 'Colombo', sans-serif; font-size: 150px;">Hi! I'm <br> <span style="font-weight: bolder; font-size: 450px; color: aqua;">Melvin V</span></h1>
+    <p id="typewriter"></p>
+    <p id="tagline">Full-Stack Developer | M.Sc. Computer Science</p>
+  </section>
+
+  <!-- ===== ABOUT SECTION ===== -->
+  <section id="about" class="about-section">
+    <h2 style="font-size: 168px; padding-top: 150px; text-align: center; font-weight: bolder; color: aqua;">About Me</h2>
+    <p style="font-size: 68px; top: 100px; text-align: left;" id="abt-cnt">Hello! I'm <strong>Melvin V</strong> — a <strong>3D and Full-Stack Developer</strong> driven by curiosity, creativity, and a passion for merging art with technology.
+      With a <strong>Master’s degree in Computer Science (M.Sc.)</strong>, I’ve developed a strong foundation in software development, interactive media, and artificial intelligence.<br>
+      My journey in tech started with designing small web applications and exploring how visual elements can come alive through code. 
+      Over time, I grew fascinated by the blend of <strong>3D graphics</strong>, <strong>animation</strong>, and <strong>interactive web experiences</strong>. 
+      Today, I specialize in crafting immersive digital spaces using <strong>Three.js</strong>, <strong>Blender</strong>, and modern web technologies.<br>
+      On the development side, I’m skilled in building end-to-end solutions — from designing intuitive front-end interfaces with 
+      <strong>HTML, CSS, and JavaScript</strong>, to developing scalable back-end systems using <strong>Python (Flask)</strong> and <strong>Java (Spring Boot)</strong>.
+      I love working on projects that challenge both my creative and technical thinking. <br>
+      My interests go beyond traditional software — I’ve explored projects in <strong>voice-based authentication systems</strong>, 
+      <strong>deepfake detection</strong>, and <strong>AI-generated content analysis</strong>, reflecting my enthusiasm for emerging fields in deep learning and digital forensics.<br>
+      Every project I build tells a story. Whether it’s a 3D interactive landing page, a responsive portfolio, or a machine learning application, 
+      I aim to create something meaningful — experiences that connect technology and human emotion.<br>
+      I believe in continuous learning and love experimenting with new frameworks, animation techniques, and visual storytelling tools. 
+      My ultimate goal is to evolve as a developer who can bridge creativity and logic — transforming abstract ideas into immersive digital realities.<br>
+      Outside of coding, I enjoy exploring visual design, experimenting with sound, and learning about advancements in artificial intelligence. 
+      I’m always open to collaborations that push the boundaries of what’s possible on the web.
+    </p>
+  </section>
+
+  <!-- ===== PROJECTS SECTION ===== -->
+<!--<section id="projects">
+  <h2 class="prjt-section-title" style="font-family: 'Vieytes', sans-serif; top: 10px; padding-left: 40%; font-size: 250px;">Projects</h2>
+  <div class="projects-container">
+
+<div class="project-card">
+  <h3 style="font-size: 100px; padding-left: 100px;">VirtuAuth – 3D Interactive Login Page (2025)</h3>
+  <iframe src="project_frame/VirtuAuth.png" class="project-frame_1" ></iframe>
+  <p style="font-size: 100px; padding-left: 100px; text-align: center;">Built a WebGL login interface with Three.js, featuring interactive 3D elements and responsive design.</p>
+  <p class="tech" style="font-size: 100px; padding-left: 100px;">Tech: Three.js, JavaScript, HTML, CSS</p>
+</div>
+    <div class="project-card">
+      <h3>AI-Based Resume Builder (2024)</h3>
+      <iframe src="project_frame/resume.png" class="project-frame_2" ></iframe>
+      <p style="font-size: 100px; padding-left: 100px; text-align: center;">Developed a web application that generates professional resumes using AI-driven formatting and content suggestions based on user input.</p>
+      <p class="tech" style="font-size: 100px; padding-left: 100px;">Tech: Python, Flask, HTML, CSS, JavaScript, OpenAI API</p>
+    </div>
+
+    <div class="project-card">
+     <h3></h3>
+     <iframe src="project_frame/AirPaint.png" class="project-frame_3" ></iframe>
+     <p style="font-size: 100px; padding-left: 100px; text-align: center;">Developed a web application that generates professional resumes using AI-driven formatting and content suggestions based on user input.</p>
+     <p class="tech"  style="font-size: 100px; padding-left: 100px;">Tech: Python, Flask, HTML, CSS, JavaScript, OpenAI API</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Maze Runner 3D Game (Final Year UG Project) (2024)</h3>
+      <iframe src="" class="project-frame_2" ></iframe>
+      <p style="font-size: 100px; padding-left: 100px; text-align: center;">Developed a 3D maze game in Unreal Engine 5 featuring dynamic obstacles and optimized gameplay.</p>
+      <p class="tech" style="font-size: 100px; padding-left: 100px;">Tech: Unreal Engine 5, Blueprint Scripting, C++</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Research Paper – Multi-Feature Based Audio Deepfake Detection Using Paralinguistic Learning (2025)</h3>
+      <p>Researched deepfake detection by combining paralinguistic feature analysis with ML classifiers, evaluated on synthetic and tampered speech datasets.</p>
+      <p class="tech">Tech: Python, Librosa, Scikit-learn, SVM, Flask</p>
+    </div> -->
+ <section id="projects" class="projects-section">
+  <h2 class="section-title">Projects</h2>
+
+  <div class="carousel-wrapper">
+    <button class="scroll-btn left-btn">◀</button>
+
+    <div class="carousel" id="carousel">
+      <div class="project-card">
+        <div class="project-frame">
+          <img 
+  src="project_frame/resume.png" 
+  data-gif="project_frame/Resume.gif" 
+  data-still="project_frame/resume.png" 
+  alt="AI Resume Builder">
+        </div>
+        <h3>AI-Based Resume Builder (2024)</h3>
+        <p>Web app generating professional resumes with AI-driven formatting and content suggestions.</p>
+        <p class="tech">Tech: Python, Flask, JS, OpenAI API</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-frame">
+          <img 
+  src="project_frame/VirtuAuth.png" 
+  data-gif="project_frame/virtuauth_gif.gif" 
+  data-still="project_frame/VirtuAuth.png" 
+  alt="VirtuAuth 3D Login">
+
+        </div>
+        <h3>VirtuAuth – 3D Interactive Login (2025)</h3>
+        <p>WebGL-based login portal with interactive 3D objects and particle animations.</p>
+        <p class="tech">Tech: Three.js, JavaScript, HTML, CSS</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-frame">
+          <img src="project_frame/AirPaint.png" alt="Air Paint">
+        </div>
+        <h3>Air Paint – Virtual Drawing (2024)</h3>
+        <p>AI-based drawing system using real-time hand tracking for gesture-controlled painting.</p>
+        <p class="tech">Tech: Python, OpenCV, MediaPipe</p>
+      </div>
+      
+      <div class="project-card">
+        <div class="project-frame">
+          <img src="project_frame/deepfake.png" alt="Deepfake Detection">
+        </div>
+        <h3>Audio Deepfake Detection (2025)</h3>
+        <p>Researched ML classifiers for paralinguistic-based deepfake and tampered audio detection.</p>
+        <p class="tech">Tech: Python, Librosa, SVM, Flask</p>
+      </div>
+
+      <div class="project-card">
+        <div class="project-frame">
+          <img src="project_frame/library_thumb.png" alt="Library Management System">
+        </div>
+        <h3>Library Management System (2024)</h3>
+        <p>Python-based library management app with cataloging and issue/return tracking.</p>
+        <p class="tech">Tech: Python, Tkinter, SQLite</p>
+      </div>
+    </div>
+
+    <button class="scroll-btn right-btn">▶</button>
+  </div>
+</section>
+
+
+
+  <!-- ===== SKILLS SECTION ===== -->
+<section id="skills">
+  <h2 style="top: 10px; padding-left: 400px; font-size: 250px;"><span style="color: aqua;">Skills</span> & Tools</h2>
+  <div id="skills-container">
+    <div class="sphere-viewport" style="width: 500%; height: 500%;">
+      <div id="skills-sphere" class="sphere" role="group" aria-label="3D skill sphere" ></div>
+    </div>
+  </div>
+</section>
+  
+<!-- ===== CONTACT SECTION ===== -->
+<section id="contact" class="contact-section">
+  <div class="contact-wrapper">
+
+    <!-- LEFT INFO PANEL -->
+    <div class="contact-left">
+      <h3>CONTACT INFO</h3>
+      <div class="contact-item">
+        <i class="icon" >📧</i>
+        <div>
+          <p><strong>MAIL US</strong></p>
+          <p><a href="mailto:melvinv@example.com">melvinvenk707@gmail.com</a></p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="icon">📞</i>
+        <div>
+          <p><strong>CONTACT US</strong></p>
+          <p>+91 98765 43210</p>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="icon">📍</i>
+        <div>
+          <p><strong>LOCATION</strong></p>
+          <p>Bengaluru, India</p>
+        </div>
+      </div>
+
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-linkedin"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- RIGHT FORM PANEL -->
+    <div class="contact-right">
+      <h2 class="contact-title">Let's work <span>together.</span></h2>
+      <form action="https://formspree.io/f/mnnlqykr" method="POST" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name *" required>
+        <input type="email" name="email" placeholder="Your Email *" required>
+        <input type="text" name="subject" placeholder="Your Subject *" required>
+        <textarea name="message" placeholder="Your Message *" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="https://cdn.jsdelivr.net/npm/simplex-noise@3.0.1/simplex-noise.min.js"></script>
+  <script type="module" src="script.js"></script>
+<style>
+.sphere-viewport {
+  width: 60px;             /* base size */
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: scale(6.5);   /* visual scale */
+  margin: 0 auto;
+  cursor: default;          /* grab removed */
+}
+
+.tag {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  color: white;
+  pointer-events: auto;
+  user-select: none;
+  white-space: nowrap;
+}
+</style>
+
+<script>
+const SCALE = 6.5; // match CSS scale
+
+const SKILLS = [ 
+  { t: "JavaScript", w: 28 },
+  { t: "React", w: 18 },
+  { t: "Three.js", w: 18 },
+  { t: "HTML", w: 14 },
+  { t: "CSS", w: 14 },
+  { t: "Next.JS", w: 16 },
+  { t: "Node", w: 14 },
+  { t: "Express", w: 14 },
+  { t: "Python", w: 16 },
+  { t: "Flask", w: 12 },
+  { t: "Java", w: 12 },
+  { t: "Spring Boot", w: 10 },
+  { t: "MySQL", w: 10 },
+  { t: "Git", w: 12 },
+  { t: "Figma", w: 10 },
+  { t: "Blender", w: 12 },
+  { t: "Machine Learning", w: 10 },
+  { t: "WebGL", w: 10 },
+  { t: "TypeScript", w: 14 },
+  { t: "Django", w: 9 },
+  { t: "GraphQL", w: 10 },
+  { t: "Docker", w: 10 },
+  { t: "AWS", w: 10 },
+  { t: "Photoshop", w: 9 },
+  { t: "C++", w: 9 },
+  { t: "SQL", w: 10 }
+];
+
+const sphere = document.getElementById('skills-sphere');
+const RADIUS = 180;
+
+function createSphere() {
+  sphere.innerHTML = '';
+  const N = SKILLS.length;
+  for (let i=0;i<N;i++){
+    const skill = SKILLS[i];
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    tag.textContent = skill.t;
+    tag.style.fontFamily = 'Times New Roman, Times, serif';
+    tag.style.fontSize = `${12 + skill.w}px`;
+    tag.style.opacity = 0.95;
+    tag.style.transition = 'color 0.2s ease';
+
+    // Hover color change
+    tag.addEventListener('mouseenter', ()=> tag.style.color = '#00ffff');
+    tag.addEventListener('mouseleave', ()=> tag.style.color = 'white');
+
+    const phi = Math.acos(-1 + (2*(i+0.5)/N));
+    const theta = Math.PI * (1 + Math.sqrt(5)) * (i+0.5);
+
+    const x = RADIUS * Math.cos(theta) * Math.sin(phi);
+    const y = RADIUS * Math.sin(theta) * Math.sin(phi);
+    const z = RADIUS * Math.cos(phi);
+
+    tag.dataset.x = x; tag.dataset.y = y; tag.dataset.z = z;
+    sphere.appendChild(tag);
+  }
+}
+
+let rotX = 0, rotY = 0;
+let targetX = 0, targetY = 0;
+let isHovering = false;
+
+const viewport = document.querySelector('.sphere-viewport');
+
+// Only rotate on hover inside the sphere viewport
+viewport.addEventListener('mouseenter', ()=> isHovering = true);
+viewport.addEventListener('mouseleave', ()=> {
+  isHovering = false;
+  targetX = 0;
+  targetY = 0;
+});
+
+viewport.addEventListener('mousemove', (e)=>{
+  if(!isHovering) return;
+  const rect = viewport.getBoundingClientRect();
+  // adjust for CSS scale
+  const offsetX = (e.clientX - rect.left) / SCALE;
+  const offsetY = (e.clientY - rect.top) / SCALE;
+
+  const centerX = rect.width / 2 / SCALE;
+  const centerY = rect.height / 2 / SCALE;
+
+  const dx = offsetX - centerX;
+  const dy = offsetY - centerY;
+
+  targetY = dx * 0.05;
+  targetX = -dy * 0.05;
+});
+
+// Floating parameters
+let floatOffset = 0;
+let floatDirection = 1;
+
+function animateSphere() {
+  // Subtle floating
+  floatOffset += 0.2 * floatDirection;
+  if(floatOffset > 10 || floatOffset < -10) floatDirection *= -1;
+
+  // Smooth rotation
+  rotX += (targetX - rotX) * 0.08;
+  rotY += (targetY - rotY) * 0.08;
+
+  sphere.style.transform = `translate(-50%, calc(-50% + ${floatOffset}px)) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+
+  Array.from(sphere.children).forEach(tag => {
+    const x = parseFloat(tag.dataset.x);
+    const y = parseFloat(tag.dataset.y);
+    const z = parseFloat(tag.dataset.z);
+
+    const ry = rotY * Math.PI / 180;
+    const rx = rotX * Math.PI / 180;
+
+    let x1 = x * Math.cos(ry) + z * Math.sin(ry);
+    let z1 = -x * Math.sin(ry) + z * Math.cos(ry);
+    let y1 = y * Math.cos(rx) - z1 * Math.sin(rx);
+    let z2 = y * Math.sin(rx) + z1 * Math.cos(rx);
+
+    const perspective = 600;
+    const scale = (perspective + z2) / (perspective + RADIUS);
+    const tx = x1 * scale;
+    const ty = y1 * scale;
+    const tz = z2;
+
+    tag.style.transform = `translate3d(${tx}px, ${ty}px, ${tz}px) scale(${(parseFloat(tag.style.fontSize)/24) * scale})`;
+    tag.style.zIndex = Math.round((tz + RADIUS) * 100);
+    tag.style.opacity = 0.65 + (scale*0.6);
+  });
+
+  requestAnimationFrame(animateSphere);
+}
+
+createSphere();
+animateSphere();
+</script>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // Close menu when clicking a link
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+    });
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".carousel");
+  const cards = document.querySelectorAll(".project-card");
+  const leftBtn = document.querySelector(".left-btn");
+  const rightBtn = document.querySelector(".right-btn");
+
+  let current = 0;
+
+  function updateCarousel() {
+    const totalCards = cards.length;
+    const cardWidth = cards[0].offsetWidth;
+    const carouselWidth = carousel.offsetWidth;
+    const offset = (carouselWidth / 2) - (cardWidth / 2);
+    const translateValue = -current * cardWidth + offset;
+
+    carousel.style.transition = "transform 0.8s cubic-bezier(0.4, 0, 0.2, 1)";
+    carousel.style.transform = `translateX(${translateValue}px)`;
+
+    cards.forEach((card, i) => {
+      const distance = Math.abs(i - current);
+      const scale = i === current ? 1 : 0.8;
+      const blur = i === current ? "blur(0px)" : "blur(3px)";
+      const brightness = i === current ? "brightness(1)" : "brightness(0.5)";
+      const opacity = i === current ? 1 : 0.5;
+      const zIndex = i === current ? 10 : 1;
+
+      card.style.transition = "all 0.6s ease";
+      card.style.transform = `scale(${scale})`;
+      card.style.filter = `${blur} ${brightness}`;
+      card.style.opacity = opacity;
+      card.style.zIndex = zIndex;
+      card.classList.toggle("active", i === current);
+
+      // === GIF PLAY CONTROL ===
+      const img = card.querySelector("img");
+      if (!img) return;
+
+      const gif = img.getAttribute("data-gif");
+      const still = img.getAttribute("data-still");
+
+      if (i === current && gif) {
+        // Add a unique query parameter to force reload the GIF (play)
+        img.src = `${gif}?t=${new Date().getTime()}`;
+      } else if (still) {
+        // Show still image when not active
+        img.src = still;
+      }
+    });
+  }
+
+  // Button navigation
+  leftBtn.addEventListener("click", () => {
+    current = (current - 1 + cards.length) % cards.length;
+    updateCarousel();
+  });
+
+  rightBtn.addEventListener("click", () => {
+    current = (current + 1) % cards.length;
+    updateCarousel();
+  });
+
+  updateCarousel();
+  window.addEventListener("resize", updateCarousel);
+});
+</script>
+
+
+<script>
+// ===== Highlight Active Nav Link on Scroll =====
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links li a");
+
+window.addEventListener("scroll", () => {
+  let current = "";
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop - 250; // adjusted offset
+    if (scrollY >= sectionTop) {
+      current = section.getAttribute("id");
+    }
+  });
+
+  navLinks.forEach((link) => {
+    link.classList.remove("active");
+    if (link.getAttribute("href") === `#${current}`) {
+      link.classList.add("active");
+    }
+  });
+}); 
+ // typewriter effect ---- About Me section
+const element = document.getElementById("abt-cnt");
+const fullHTML = element.innerHTML.trim();
+element.innerHTML = ""; // clear visible content
+
+let i = 0;
+let isTag = false;
+let currentTag = "";
+
+function typeWriter() {
+  if (i < fullHTML.length) {
+    const char = fullHTML[i];
+
+    if (char === "<") {
+      isTag = true;
+    }
+
+    if (isTag) {
+      currentTag += char;
+    } else {
+      element.innerHTML += char;
+    }
+
+    if (char === ">") {
+      isTag = false;
+      element.innerHTML += currentTag; // append full tag at once
+      currentTag = "";
+    }
+
+    i++;
+    setTimeout(typeWriter, 15); // speed
+  } else {
+    // Remove cursor when done
+    element.style.borderRight = "none";
+  }
+}
+
+typeWriter();
+  </script>
+
+<script>
+function validateForm(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name");
+  const email = document.getElementById("email");
+  const subject = document.getElementById("subject");
+  const message = document.getElementById("message");
+
+  let isValid = true;
+  let errorMsg = "";
+
+  // Reset previous styles
+  [name, email, subject, message].forEach(field => field.style.borderColor = "");
+
+  // Name validation
+  if (name.value.trim().length < 2) {
+    errorMsg = "Please enter your full name.";
+    name.style.borderColor = "red";
+    isValid = false;
+  }
+
+  // Email validation
+  const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.value.match(emailPattern)) {
+    errorMsg = "Please enter a valid email address.";
+    email.style.borderColor = "red";
+    isValid = false;
+  }
+
+  // Subject validation
+  if (subject.value.trim().length < 3) {
+    errorMsg = "Please enter a valid subject.";
+    subject.style.borderColor = "red";
+    isValid = false;
+  }
+
+  // Message validation
+  if (message.value.trim().length < 10) {
+    errorMsg = "Please enter at least 10 characters in your message.";
+    message.style.borderColor = "red";
+    isValid = false;
+  }
+
+  if (!isValid) {
+    alert("⚠️ " + errorMsg);
+    return false;
+  }
+
+  // If all fields valid, submit to Formspree
+  fetch(event.target.action, {
+    method: "POST",
+    body: new FormData(event.target),
+    headers: { 'Accept': 'application/json' }
+  }).then(response => {
+    if (response.ok) {
+      alert("✅ Message sent successfully! I’ll get back to you soon.");
+      event.target.reset();
+    } else {
+      alert("❌ Oops! Something went wrong. Please try again later.");
+    }
+  }).catch(() => {
+    alert("❌ Network error. Please check your connection.");
+  });
+
+  return false;
+}
+</script>
+
+
+</body>
+</html>
+
+--------------------------css--------------------------------------
+@font-face {
+  font-family: 'swell-regular';
+  src: url('fonts/swell-regular.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BrickSans';
+  src: url('fonts/Bricksans-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'CindieMono';
+  src: url('fonts/CindieMono-D.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Colombo';
+  src: url('fonts/Colombo.ttf') format('opentype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Vieytes';
+  src: url('fonts/Vieytes.ttf') format('opentype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+/* ========== Global Styles ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: black;
+  color: white;
+  font-family: 'Colombo', sans-serif;
+  z-index: 9999;
+}
+
+/* ========== Section Base ========== */
+section {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 10%;
+  box-sizing: border-box;
+  z-index: 100;
+}
+
+/* ========== Home Section ========== */
+.home-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.name {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 800vw; /* scales with screen width */
+  max-width: 3500px;
+  z-index: 1;
+  opacity: 1;
+  animation: glowPulse 2s ease-in-out infinite alternate;
+}
+
+/* Glowing pulse animation */
+@keyframes glowPulse {
+  0% {
+    filter: drop-shadow(0 0 10px #ffffff);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    filter: drop-shadow(0 0 30px #ffffff);
+    transform: translate(-50%, -50%) scale(1.05);
+  }
+}
+
+#tagline {
+  position: absolute;
+  top: 1800px;
+  left: -0.5%;
+  color: rgba(255, 255, 255, 0.532);
+  font-size: 88px;
+  font-family: 'Colombo', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  width: 100%;
+  z-index: 1;
+}
+
+/* ========== About Section ========== */
+.about-section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 250px 8%; /* top + side padding for breathing space */
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 68px;
+  text-align: justify;
+  line-height: 1.8;
+  position: relative;
+  z-index: 10;
+  overflow-x: hidden;
+  background: transparent;
+}
+
+.about-title {
+  font-size: 180px;
+  font-weight: 800;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: 0 0 35px rgb(255, 255, 255),
+               0 0 60px rgba(0, 255, 255, 0.3);
+  font-family: 'swell-regular', sans-serif;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  letter-spacing: 0;
+}
+
+.about-content-fade-in {
+  width: 100%;
+  font-size: 70px;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.418);
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-align: justify;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  padding: 0 4%; /* gentle horizontal padding */
+}
+
+/* ========== Fade-in Animation (Removable) ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: opacity 2s ease-out, transform 2s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== Responsive Design ========== */
+@media (max-width: 1400px) {
+  .about-title {
+    font-size: 120px;
+  }
+  .about-content-fade-in {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 180px 6%;
+  }
+  .about-title {
+    font-size: 80px;
+  }
+  .about-content-fade-in {
+    font-size: 40px;
+    line-height: 1.6;
+  }
+}
+
+/* ========== Skills Section ========== */
+#skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 120px 5%;
+  color: white;
+}
+
+#skills h2 {
+  font-family: 'Vieytes', sans-serif;
+  font-size: 100px;
+  margin: 0;
+  flex: 1;
+  text-align: left;
+}
+
+#skills-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  height: 600px;
+}
+
+/* Keep original working dimensions */
+.sphere-viewport {
+  width: 60px;
+  height: 60px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+  transform: scale(6.5);
+  margin: 0 auto;
+}
+
+.sphere {
+  position: absolute;
+  top: 50%;
+  left: 47%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+}
+
+.tag {
+  position: absolute;
+  transform-style: preserve-3d;
+  color: white;
+  pointer-events: auto;
+  user-select: none;
+}
+
+/* ========== Navbar ========== */
+.navbar {
+  position: fixed;
+  top: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 220px; /* spacing between links */
+}
+
+.nav-links li a {
+  color: white;
+  font-size: 90px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #ffffff;
+  text-shadow: 0 0 15px #ffffff;
+  transform: scale(1.4); /* grow 40% bigger on hover */
+  font-size: 86px; /* optional extra size */
+}
+
+/* Active link style */
+.nav-links li a.active {
+  color: cyan;
+  text-shadow: 0 0 25px cyan;
+  font-weight: bold;
+}
+
+/* Responsive Navbar */
+@media (max-width: 1024px) {
+  .nav-links li a {
+    font-size: 28px;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .nav-links li a {
+    font-size: 24px;
+  }
+}
+
+/* ========== Background Canvas ========== */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -9999; /* keeps it behind everything */
+  pointer-events: none; /* prevents blocking interaction */
+}
+
+/* ========== Section Entrance Animation (Can Remove if Not Needed) ========== */
+section {
+  opacity: 1;
+  transform: translateY(80px);
+  transition: opacity 1.5s ease-out, transform 1.5s ease-out;
+  will-change: opacity, transform;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+section.visible:nth-of-type(odd) {
+  transition-delay: 0.2s;
+}
+
+section.visible:nth-of-type(even) {
+  transition-delay: 0.4s;
+}
+
+/* Keeps sections positioned properly */
+section {
+  min-height: 100vh;
+  scroll-margin-top: 120px; /* ensures visibility under navbar */
+}
+------------------------------projectstyle---------------------------------
+@font-face {
+  font-family: 'swell-regular';
+  src: url('fonts/swell-regular.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+.projects-section {
+  width: 100%;
+  padding-top: 100px;
+  text-align: center;
+  background: transparent;
+  color: white;
+  position: relative;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+.section-title {
+  font-family: 'swell-regular', sans-serif;
+  font-size: 200px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 100px rgb(255, 255, 255);
+  margin-bottom: 70px;
+}
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  display: flex;
+  align-items: center;
+  gap: 0px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  width: 100%;
+  justify-content: center;
+  width: max-content;
+  overflow: visible;
+}
+
+.project-card {
+  flex: 0 0 2400px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  transform: scale(0.8);
+  filter: blur(2px) brightness(0.6);
+  opacity: 0.5;
+}
+
+.project-card.active {
+  transform: scale(1);
+  filter: blur(0) brightness(1);
+  opacity: 1;
+  box-shadow: 0 0 50px rgb(255, 255, 255);
+}
+
+.project-frame {
+  width: 100%;
+  height: 1350px;
+  overflow: hidden;
+  border-radius: 0px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.project-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0px;
+  transition: transform 0.4s ease;
+}
+
+.project-card.active .project-frame img {
+  transform: scale(1.05);
+}
+
+.project-info {
+  text-align: center;
+  margin-top: 80px;
+  transition: opacity 0.4s ease, transform 0.5s ease;
+}
+
+#project-title {
+  font-size: 7010px;
+  color: cyan;
+  text-shadow: 0 0 20px cyan;
+  margin-bottom: 25px;
+  transition: 0.5s ease;
+}
+
+#project-desc {
+  font-size: 26px;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 15px;
+}
+
+.tech {
+  font-size: 22px;
+  color: #00ffff;
+  font-style: italic;
+  margin-top: 10px;
+}
+.scroll-btn {
+  background: transparent;
+  border: none; /* removed circle outline */
+  color: white;
+  font-size: 140px; /* arrow size */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 50;
+  opacity: 0.7;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn:hover {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.603);
+  opacity: 1;
+}
+
+/* Positioning */
+.left-btn {
+  left: 80px;
+}
+
+.right-btn {
+  right: 80px;
+}
+

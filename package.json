@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@react-three/postprocessing": "^3.0.4",
+    "three": "^0.181.0"
+  }
+}

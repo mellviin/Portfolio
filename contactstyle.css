@@ -1,0 +1,225 @@
+/* ===== CONTACT SECTION (GRID-X STYLE) ===== */
+.contact-section {
+  min-height: auto;
+  height: 80vh;
+  background: rgba(0, 0, 0, 0);
+  display: flex;
+  padding: 0px 8% 20px; /* 👈 reduced top padding from 150px to 60px */
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.contact-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  padding: 0px 0px 0px 0px;
+  width: 100%;
+  max-width: 3800px;
+  height: 100%;
+  color: white;
+}
+
+/* ===== LEFT PANEL ===== */
+.contact-left {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.041);
+  padding: 60px 50px;
+  border-radius: 25px;
+  backdrop-filter: blur(10px);
+  height: 1200px;
+}
+
+.contact-left h3 {
+  font-family: 'swell-regular', sans-serif;
+  font-size: 190px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 200px aqua;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 50px;
+}
+
+.contact-item .icon {
+  font-size: 80px;
+  font-style: normal;
+}
+
+.contact-item p {
+  margin: 0;
+  font-size: 74px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contact-item a {
+  color: cyan;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.contact-item a:hover {
+  text-shadow: 0 0 15px cyan;
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
+  margin-top: 160px;
+  position: relative;
+}
+
+.social-icons a {
+  position: relative;
+  font-size: 90px;
+  color: white;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: cyan;
+  text-shadow: 0 0 25px cyan;
+  transform: scale(1.2);
+}
+
+/* Tooltip style (animated hologram float) */
+.social-icons a::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -55px;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: cyan;
+  color: black;
+  font-size: 28px;
+  padding: 6px 16px;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  white-space: nowrap;
+  font-family: 'Colombo', sans-serif;
+  box-shadow: 0 0 25px cyan;
+  pointer-events: none;
+}
+
+.social-icons a:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-10px);
+  box-shadow: 0 0 40px cyan, 0 0 80px cyan;
+}
+
+/* ===== RIGHT FORM PANEL ===== */
+.contact-right {
+  flex: 1.6;
+  background: rgba(255, 255, 255, 0.041);
+  height: 1150px;
+  padding: 80px;
+  border-radius: 25px;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+}
+
+.contact-title {
+  font-size: 190px;
+  margin-bottom: 70px;
+  color: white;
+  text-shadow: 0 0 200px cyan;
+  text-align: left;
+  font-family: 'swell-regular', sans-serif;
+  align-items: center;
+}
+
+.contact-title span {
+  color: cyan;
+  text-shadow: 0 0 200px rgb(255, 255, 255);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 70%;
+  padding: 28px 35px;
+  font-size: 62px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 2px solid rgba(0, 255, 255, 0);
+  border-radius: 20px;
+  color: white;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Colombo', sans-serif;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  width: 72%;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: cyan;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0);
+  width: 72%;
+}
+
+.contact-form button {
+  background: cyan;
+  color: black;
+  border: none;
+  padding: 28px;
+  font-size: 58px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Colombo', sans-serif;
+}
+
+.contact-form button:hover {
+  background: white;
+  color: black;
+  box-shadow: 0 0 25px cyan;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1200px) {
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    width: 100%;
+  }
+
+  .contact-title {
+    font-size: 120px;
+    text-align: center;
+  }
+
+  .social-icons a {
+    font-size: 70px;
+  }
+}

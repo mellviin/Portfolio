@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Skills — Word Cloud / 3D Sphere</title>
+<style>
+  :root{
+    --bg:#0f0f12;
+    --muted:#9aa0a6;
+    --accent:#16b286;
+    --white:#ffffff;
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:var(--bg);
+    color:var(--white);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .wrap{
+    max-width:1320px;
+    margin:40px auto;
+    padding:40px;
+    box-sizing:border-box;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:40px;
+    align-items:start;
+  }
+
+  /* LEFT: Title + description */
+  .left {
+    padding:30px 20px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .title {
+    font-size:48px;
+    line-height:1;
+    margin:0;
+    font-weight:700;
+  }
+  .title .accent { color:var(--accent); }
+  .desc {
+    color:var(--muted);
+    font-size:18px;
+    line-height:1.7;
+    max-width:640px;
+  }
+  .controls {
+    margin-top:12px;
+    display:flex;
+    gap:10px;
+    align-items:center;
+  }
+  .btn {
+    background:transparent;
+    border:1px solid rgba(255,255,255,0.08);
+    color:var(--white);
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:600;
+    transition:all .18s ease;
+  }
+  .btn.active {
+    background: linear-gradient(90deg, rgba(22,178,134,0.18), rgba(22,178,134,0.06));
+    border-color: rgba(22,178,134,0.8);
+    box-shadow: 0 6px 18px rgba(22,178,134,0.06);
+  }
+  .hint { color:var(--muted); font-size:13px; margin-left:8px; }
+
+  /* RIGHT: cloud area */
+  .right {
+    position:relative;
+    min-height:520px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
+
+  .cloud-container, .sphere-container {
+    position:relative;
+    width:100%;
+    height:520px;
+    border-radius:12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+    overflow:hidden;
+  }
+
+  /* 2D interactive cloud */
+  .cloud {
+    position:absolute;
+    inset:0;
+  }
+  .cloud word {
+    display:inline-block;
+    position:absolute;
+    transform-origin:center center;
+    color:rgba(255,255,255,0.9);
+    transition: transform .18s cubic-bezier(.2,.9,.2,1), color .18s;
+    cursor:pointer;
+    letter-spacing:0.2px;
+    user-select:none;
+    white-space:nowrap;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.5);
+  }
+  /* gentle float animation */
+  .float1 { animation: floatA 6s ease-in-out infinite; }
+  .float2 { animation: floatB 8s ease-in-out infinite; }
+  .float3 { animation: floatC 7s ease-in-out infinite; }
+
+  @keyframes floatA {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-8px) scale(1.02); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  @keyframes floatB {
+    0% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(10px) scale(0.99); }
+    100% { transform: translateY(0) scale(1); }
+  }
+  @keyframes floatC {
+    0% { transform: translateY(0) rotate(0deg) scale(1); }
+    50% { transform: translateY(-6px) rotate(1deg) scale(1.01); }
+    100% { transform: translateY(0) rotate(0deg) scale(1); }
+  }
+
+  .cloud word:hover {
+    transform: scale(1.35) translateZ(0);
+    color:var(--accent);
+    z-index:50;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  }
+
+  /* 3D sphere */
+  .sphere-viewport {
+    perspective:900px;
+    width:100%;
+    height:100%;
+    position:relative;
+    overflow:hidden;
+  }
+  .sphere {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform-style:preserve-3d;
+    transform: translate(-50%,-50%) rotateX(0deg) rotateY(0deg);
+    width:420px; height:420px;
+    transition: transform .08s linear;
+  }
+
+  .sphere .tag {
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform-origin:center center;
+    transform-style:preserve-3d;
+    color:rgba(255,255,255,0.92);
+    cursor:pointer;
+    user-select:none;
+    text-shadow: 0 1px 0 rgba(0,0,0,0.6);
+    transition: transform .12s cubic-bezier(.2,.9,.2,1), color .12s;
+    white-space:nowrap;
+  }
+  .sphere .tag:hover {
+    transform: translate3d(0,0,0) scale(1.35) !important;
+    color:var(--accent);
+    z-index:9999;
+  }
+
+  /* responsive */
+  @media (max-width:980px){
+    .wrap { grid-template-columns: 1fr; padding:24px; gap:30px; }
+    .right { order: -1; }
+    .title { font-size:34px; }
+    .left { padding:8px 0; }
+    .desc { font-size:16px; max-width:100%; }
+    .cloud-container, .sphere-container { height:420px; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="wrap">
+    <div class="left">
+      <h1 class="title"><span class="accent">Skills</span> and tools</h1>
+      <p class="desc">For a more <span style="color:var(--accent); font-weight:700">detailed</span> overview, please feel free to check the tools that were used on a per-project basis. Hover to explore — click a skill to highlight it.</p>
+
+      <div class="controls" aria-hidden="false">
+        <button id="btn-cloud" class="btn active">Interactive Cloud</button>
+        <button id="btn-sphere" class="btn">3D Sphere</button>
+        <span class="hint">Hover a word to enlarge • Click to persist highlight</span>
+      </div>
+    </div>
+
+    <div class="right">
+      <!-- Two containers stacked; we toggle visibility -->
+      <div id="cloudCard" class="cloud-container" aria-hidden="false">
+        <div id="cloud" class="cloud" aria-hidden="false"></div>
+      </div>
+
+      <div id="sphereCard" class="sphere-container" aria-hidden="true" style="display:none;">
+        <div class="sphere-viewport">
+          <div id="sphere" class="sphere" role="group" aria-label="3D skill sphere"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ---------------------------
+  Skills + weights (editable)
+  higher weight => larger text
+------------------------------*/
+const SKILLS = [
+  { t: "JavaScript", w: 28 },
+  { t: "ChartJS", w: 20 },
+  { t: "React", w: 18 },
+  { t: "Three.js", w: 18 },
+  { t: "HTML", w: 14 },
+  { t: "CSS", w: 14 },
+  { t: "Next.JS", w: 16 },
+  { t: "Node", w: 14 },
+  { t: "Express", w: 14 },
+  { t: "Python", w: 16 },
+  { t: "Flask", w: 12 },
+  { t: "Java", w: 12 },
+  { t: "Spring Boot", w: 10 },
+  { t: "MySQL", w: 10 },
+  { t: "Git", w: 12 },
+  { t: "Figma", w: 10 },
+  { t: "Blender", w: 12 },
+  { t: "Machine Learning", w: 10 },
+  { t: "WebGL", w: 10 },
+  { t: "TypeScript", w: 14 },
+  { t: "Django", w: 9 },
+  { t: "GraphQL", w: 10 },
+  { t: "Docker", w: 10 },
+  { t: "AWS", w: 10 },
+  { t: "Photoshop", w: 9 },
+  { t: "C++", w: 9 },
+  { t: "SQL", w: 10 }
+];
+
+/* ---------------------------
+  Interactive 2D Cloud
+------------------------------*/
+const cloud = document.getElementById('cloud');
+const cloudRect = () => ({ w: cloud.clientWidth, h: cloud.clientHeight });
+
+function create2DCloud() {
+  cloud.innerHTML = '';
+  const { w, h } = cloudRect();
+  const padding = 24;
+  SKILLS.forEach((skill, idx) => {
+    const el = document.createElement('word');
+    // font-size relative to weight
+    const size = Math.max(12, skill.w * 1.8 + (Math.random()*6-3));
+    el.style.fontSize = `${size}px`;
+    // random position within container
+    const left = Math.random() * (w - padding*2) + padding;
+    const top  = Math.random() * (h - padding*2) + padding;
+    el.style.left = `${left}px`;
+    el.style.top = `${top}px`;
+    el.textContent = skill.t;
+    // random float class
+    el.classList.add(['float1','float2','float3'][idx % 3]);
+    // small rotation variance
+    el.style.transform = `translateZ(0) rotate(${(Math.random()*6-3).toFixed(2)}deg)`;
+    // data attributes
+    el.dataset.skill = skill.t;
+    el.dataset.weight = skill.w;
+    cloud.appendChild(el);
+
+    // click: toggle highlight persistence
+    el.addEventListener('click', (e)=>{
+      const current = e.currentTarget;
+      if (current.classList.contains('pinned')) {
+        current.classList.remove('pinned');
+        current.style.boxShadow = '';
+      } else {
+        // unpin other pinned ones
+        document.querySelectorAll('.cloud word.pinned').forEach(x=> x.classList.remove('pinned'));
+        current.classList.add('pinned');
+      }
+    });
+  });
+}
+
+/* ---------------------------
+  3D Sphere implementation
+  simple tag-sphere using spherical coords
+------------------------------*/
+const sphere = document.getElementById('sphere');
+const RADIUS = 180; // px
+
+function createSphere() {
+  sphere.innerHTML = '';
+  const N = SKILLS.length;
+  // distribute points on sphere using Golden Section Spiral
+  for (let i=0;i<N;i++){
+    const skill = SKILLS[i];
+    const tag = document.createElement('div');
+    tag.className = 'tag';
+    tag.textContent = skill.t;
+    const weightScale = 0.6 + (skill.w / 28); // 0.6 - ~1.6
+    tag.style.fontSize = `${12 + skill.w}px`;
+    tag.style.opacity = 0.95;
+
+    // spherical coordinates
+    const phi = Math.acos(-1 + (2*(i+0.5)/N)); // polar
+    const theta = Math.PI * (1 + Math.sqrt(5)) * (i+0.5);
+
+    // 3D cartesian
+    const x = RADIUS * Math.cos(theta) * Math.sin(phi);
+    const y = RADIUS * Math.sin(theta) * Math.sin(phi);
+    const z = RADIUS * Math.cos(phi);
+
+    // position tag using translate3d
+    tag.style.transform = `translate3d(${x}px, ${y}px, ${z}px) scale(${weightScale})`;
+    // store coords for rotation
+    tag.dataset.x = x; tag.dataset.y = y; tag.dataset.z = z;
+
+    sphere.appendChild(tag);
+
+    // click highlight
+    tag.addEventListener('click', ()=> {
+      // brief highlight
+      document.querySelectorAll('.sphere .tag').forEach(t => t.style.opacity = 0.5);
+      tag.style.opacity = 1;
+      tag.style.color = 'var(--accent)';
+      setTimeout(()=> {
+        document.querySelectorAll('.sphere .tag').forEach(t => t.style.opacity = 0.95);
+        tag.style.color = '';
+      }, 1200);
+    });
+  }
+}
+
+/* rotation state & mouse */
+let rotX = -10, rotY = 0;
+let targetX = rotX, targetY = rotY;
+let isPointerDown = false;
+let lastPos = {x:0,y:0};
+
+function animateSphere() {
+  // ease towards target
+  rotX += (targetX - rotX) * 0.08;
+  rotY += (targetY - rotY) * 0.08;
+  sphere.style.transform = `translate(-50%,-50%) rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+  // update scale/opacity depth illusion
+  Array.from(sphere.children).forEach(tag => {
+    const x = parseFloat(tag.dataset.x);
+    const y = parseFloat(tag.dataset.y);
+    const z = parseFloat(tag.dataset.z);
+
+    // Rotate point by rotX/rotY (convert to radians)
+    const ry = rotY * Math.PI / 180;
+    const rx = rotX * Math.PI / 180;
+
+    // rotation Y
+    let x1 = x * Math.cos(ry) + z * Math.sin(ry);
+    let z1 = -x * Math.sin(ry) + z * Math.cos(ry);
+
+    // rotation X
+    let y1 = y * Math.cos(rx) - z1 * Math.sin(rx);
+    let z2 = y * Math.sin(rx) + z1 * Math.cos(rx);
+
+    // perspective scale and z-ordering
+    const perspective = 600;
+    const scale = (perspective + z2) / (perspective + RADIUS);
+    const tx = x1 * scale;
+    const ty = y1 * scale;
+    const tz = z2;
+
+    // apply position
+    tag.style.transform = `translate3d(${tx}px, ${ty}px, ${tz}px) scale(${(parseFloat(tag.style.fontSize)/24) * scale})`;
+    tag.style.zIndex = Math.round((tz + RADIUS) * 100);
+    tag.style.opacity = 0.65 + (scale*0.6);
+  });
+
+  requestAnimationFrame(animateSphere);
+}
+
+/* mouse/touch handlers */
+function attachSphereControls() {
+  const viewport = document.querySelector('.sphere-viewport');
+  viewport.addEventListener('pointerdown', (e)=>{
+    isPointerDown = true;
+    lastPos.x = e.clientX; lastPos.y = e.clientY;
+    viewport.setPointerCapture(e.pointerId);
+  });
+  viewport.addEventListener('pointermove', (e)=>{
+    if (!isPointerDown) return;
+    const dx = e.clientX - lastPos.x;
+    const dy = e.clientY - lastPos.y;
+    lastPos.x = e.clientX; lastPos.y = e.clientY;
+    targetY += dx * 0.25;
+    targetX -= dy * 0.15;
+  });
+  viewport.addEventListener('pointerup', (e)=> { isPointerDown = false; });
+  viewport.addEventListener('pointerleave', ()=> { isPointerDown = false; });
+
+  // subtle rotation on mouse move (not drag)
+  viewport.addEventListener('mousemove', (e)=>{
+    const rect = viewport.getBoundingClientRect();
+    const cx = rect.left + rect.width/2;
+    const cy = rect.top + rect.height/2;
+    const mx = (e.clientX - cx) / rect.width;
+    const my = (e.clientY - cy) / rect.height;
+    targetY = mx * 30;
+    targetX = -my * 30;
+  });
+
+  // reset to gentle spin if idle
+  let idleTimer;
+  viewport.addEventListener('mouseleave', ()=>{
+    clearTimeout(idleTimer);
+    idleTimer = setTimeout(()=> { targetX = -10; targetY = 0; }, 850);
+  });
+}
+
+/* ---------------------------
+  wire up toggles and init
+------------------------------*/
+const btnCloud = document.getElementById('btn-cloud');
+const btnSphere = document.getElementById('btn-sphere');
+const cloudCard = document.getElementById('cloudCard');
+const sphereCard = document.getElementById('sphereCard');
+
+btnCloud.addEventListener('click', ()=> {
+  btnCloud.classList.add('active');
+  btnSphere.classList.remove('active');
+  cloudCard.style.display = '';
+  cloudCard.setAttribute('aria-hidden','false');
+  sphereCard.style.display = 'none';
+  sphereCard.setAttribute('aria-hidden','true');
+});
+btnSphere.addEventListener('click', ()=> {
+  btnSphere.classList.add('active');
+  btnCloud.classList.remove('active');
+  cloudCard.style.display = 'none';
+  cloudCard.setAttribute('aria-hidden','true');
+  sphereCard.style.display = '';
+  sphereCard.setAttribute('aria-hidden','false');
+});
+
+/* initial creation */
+create2DCloud();
+createSphere();
+attachSphereControls();
+animateSphere();
+
+/* recompute on resize so 2D items place nicely */
+window.addEventListener('resize', ()=>{
+  // recreate 2D positions
+  create2DCloud();
+});
+</script>
+
+</body>
+</html>
