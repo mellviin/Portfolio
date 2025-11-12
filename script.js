@@ -10,6 +10,7 @@ import { FilmPass } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js
 import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/ShaderPass.js';
 import { FXAAShader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/FXAAShader.js';
 
+
 // ---- Scene setup ----
 const scene = new THREE.Scene();
 
