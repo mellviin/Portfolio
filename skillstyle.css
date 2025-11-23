@@ -1,0 +1,104 @@
+
+/* ========== Skills Section ========== */
+@font-face {
+  font-family: 'swell-regular';
+  src: url('fonts/swell-regular.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ========== Skills Section ========== */
+#skills {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.534);
+}
+
+.skills-title {
+  font-family: 'swell-regular', sans-serif;
+  text-align: left;       /* keep alignment same as your design */
+  margin-left: -90px;      /* adjust to match your style */
+  position: relative;
+}
+
+.skills-title .main-title {
+  font-size: 80px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 40px aqua;
+}
+
+.skills-tagline {
+  font-family: 'swell-regular', sans-serif;
+  font-size: 28px;
+  margin-top: 15px;
+  color: rgba(255, 255, 255, 1);
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.408);
+}
+
+.cinematic-line {
+  width: 420px;                    /* adjust as needed */
+  height: 3px;
+  margin-left: -390px;
+  margin-top: -5px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+
+  border-radius: 50px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeLine 1.5s ease forwards;
+}
+
+@keyframes fadeLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+#skills-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+  height: 600px;
+}
+
+/* Keep original working dimensions */
+.sphere-viewport {
+  width: 15px;
+  height: 15px;
+  position: relative;
+  transform-style: preserve-3d;
+  cursor: grab;
+  transform: scale(1.7);
+  margin: 0 auto;
+}
+
+.sphere {
+  position: absolute;
+  top: 49.5%;
+  left: 49.5%;
+  transform-style: preserve-3d;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 200px aqua;
+}
+
+.tag {
+  position: absolute;
+  transform-style: preserve-3d;
+  color:rgba(255, 255, 255, 0.534);
+  pointer-events: auto;
+  user-select: none;
+}
