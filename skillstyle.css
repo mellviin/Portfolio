@@ -44,7 +44,8 @@
   height: 3px;
   margin-left: -390px;
   margin-top: -5px;
-  background: linear-gradient(to right,
+  background: linear-gradient(
+    to right,
     rgba(255, 255, 255, 1),
     rgba(255, 255, 255, 0.5),
     rgba(255, 255, 255, 0.1),
@@ -100,6 +101,7 @@
   pointer-events: auto;
   user-select: none;
 }
+
 
 
 /* ======================================================= */
@@ -182,7 +184,7 @@
   }
 }
 
-/* ▸ Small phones (iPhone SE) */
+/* ▸ Small phones */
 @media (max-width: 480px) {
   .skills-title .main-title {
     font-size: 38px;
