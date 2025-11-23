@@ -7,17 +7,7 @@ import { UnrealBloomPass } from "https://unpkg.com/three@0.158.0/examples/jsm/po
 import { FilmPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/FilmPass.js";
 import { ShaderPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/ShaderPass.js";
 import { FXAAShader } from "https://unpkg.com/three@0.158.0/examples/jsm/shaders/FXAAShader.js";
-/* 
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
-import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader.js';
-*/
+
 
 
 // ---- Scene setup ----
