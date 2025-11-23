@@ -1,14 +1,23 @@
-
-// ✅ Three.js core and addons from CDN (v0.160.0)
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js';
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { FilmPass } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/FilmPass.js';
-import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/postprocessing/ShaderPass.js';
-import { FXAAShader } from 'https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/shaders/FXAAShader.js';
+import * as THREE from "https://unpkg.com/three@0.158.0/build/three.module.js";
+import { GLTFLoader } from "https://unpkg.com/three@0.158.0/examples/jsm/loaders/GLTFLoader.js";
+import { OrbitControls } from "https://unpkg.com/three@0.158.0/examples/jsm/controls/OrbitControls.js";
+import { EffectComposer } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { FilmPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/FilmPass.js";
+import { ShaderPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/ShaderPass.js";
+import { FXAAShader } from "https://unpkg.com/three@0.158.0/examples/jsm/shaders/FXAAShader.js";
+/* 
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { FilmPass } from 'three/examples/jsm/postprocessing/FilmPass.js';
+import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import { FXAAShader } from 'three/examples/jsm/shaders/FXAAShader.js';
+*/
 
 
 // ---- Scene setup ----
@@ -21,7 +30,7 @@ scene.background = 0x000000;
 
 // ---- Starfield ----
 function createStarField() {
-  const starCount = 3000; 
+  const starCount = 0; 
   const geometry = new THREE.BufferGeometry();
   const positions = new Float32Array(starCount * 3);
   const speeds = new Float32Array(starCount);
@@ -66,43 +75,24 @@ function updateStars(delta) {
   positions.needsUpdate = true;
 }
 
-
 // ---- Camera ----
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
 camera.position.set(0, 1.6, 6);
-
-// ---- Torchlight (camera flashlight) ----
-/*const torchLight = new THREE.SpotLight(0xffffff, 3, 500, Math.PI / 8, 0.5, 2);
-torchLight.castShadow = true;
-torchLight.shadow.mapSize.width = 2048;
-torchLight.shadow.mapSize.height = 2048;
-torchLight.shadow.bias = -0.0001;
-
-torchLight.position.copy(camera.position);
-torchLight.target.position.set(0, 0, -1);
-scene.add(torchLight);
-scene.add(torchLight.target);
-
-// helper (optional, can remove)
-const torchHelper = new THREE.SpotLightHelper(torchLight);
-scene.add(torchHelper);
-
-function updateTorchLight() {
-  torchLight.position.copy(camera.position);
-  const dir = new THREE.Vector3(0, 0, -1).applyQuaternion(camera.quaternion);
-  torchLight.target.position.copy(camera.position.clone().add(dir.multiplyScalar(10)));
-  torchLight.target.updateMatrixWorld();
-}*/
-
-
 // ---- Renderer ----
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.outputEncoding = THREE.sRGBEncoding;
 renderer.toneMapping = THREE.ACESFilmicToneMapping;
 renderer.toneMappingExposure = 1.2;
-document.body.appendChild(renderer.domElement);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+document.getElementById("bg-canvas").appendChild(renderer.domElement);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.0));
+
+renderer.domElement.style.position = "fixed";
+renderer.domElement.style.top = "0";
+renderer.domElement.style.left = "0";
+renderer.domElement.style.width = "100vw";
+renderer.domElement.style.height = "100vh";
+renderer.domElement.style.zIndex = "-9999";
 
 
 // ---- Post Processing ----
@@ -113,18 +103,16 @@ composer.addPass(renderPass);
 // Bloom (soft cinematic glow)
 const bloomPass = new UnrealBloomPass(
   new THREE.Vector2(window.innerWidth, window.innerHeight),
-  0.3, 0.8, 0.1 
+  0.12, 0.6, 0.05 
 );
 composer.addPass(bloomPass);// 🎞️ Optional: Film grain and FXAA (if you want to keep them)
 const filmPass = new FilmPass(0.8, 0.25, 0, true);
-composer.addPass(filmPass);
 
 const fxaaPass = new ShaderPass(FXAAShader);
 fxaaPass.material.uniforms['resolution'].value.set(
   1 / window.innerWidth,
   1 / window.innerHeight
 );
-composer.addPass(fxaaPass);
 
 // ---- Lighting ----
 const ambient = new THREE.HemisphereLight(0xffffff, 0xffffff, 2.8);
@@ -150,16 +138,12 @@ const loader = new GLTFLoader();
 
 // ---- Floating Models ----
 const modelConfigs = [
-  { file: './models/animated_man.glb', scale: 0.01, radius: 0.8, isAstronaut: true },
-  { file: './models/sci-fi_computer.glb', scale: 0.1 },
-  /*{ file: './models/rock1.glb', scale: 0.05, radius: 0.1 },*/
-  { file: './models/rock1.glb', scale: 0.01, radius: 0.8 },
-  //{ file: './models/rock1.glb', scale: 0.03, radius: 0.01 },
-  //{ file: './models/rock1.glb', scale: 0.04, radius: 0.09 },
-  { file: './models/rock1.glb', scale: 0.005, radius: 0.1 },
-  { file: './models/rock1.glb', scale: 0.008, radius: 0.05 },
-  //{ file: './models/rock1.glb', scale: 0.08, radius: 0.04 },
-  { file: './models/rock1.glb', scale: 0.02, radius: 0.4 },
+  { file: '/models/animated_man.glb', scale: 0.01, radius: 0.8, isAstronaut: true },
+  { file: '/models/sci-fi_computer.glb', scale: 0.1 },
+  { file: '/models/rock1.glb', scale: 0.01, radius: 0.8 },
+  { file: '/models/rock1.glb', scale: 0.005, radius: 0.1 },
+  { file: '/models/rock1.glb', scale: 0.008, radius: 0.05 },
+  { file: '/models/rock1.glb', scale: 0.02, radius: 0.4 },
 ];
 
 const models = [];
@@ -220,10 +204,6 @@ modelConfigs.forEach((cfg) => {
       child.castShadow = true;
       child.receiveShadow = true;
       child.userData.clickable = true;
-
-      // 🟦 Add emissive glow for bloom effect
-     /* child.material.emissive = new THREE.Color(0x000000);
-      child.material.emissiveIntensity = 1.2;*/
     }
   });
 
