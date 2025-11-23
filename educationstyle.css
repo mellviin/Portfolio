@@ -1,0 +1,101 @@
+/* ===== EDUCATION SECTION ===== */
+
+#education {
+  scroll-margin-top: 120px;
+}
+
+
+.education-section {
+    padding-top: 0%;
+    padding-bottom: 80px;
+    text-align: center;
+    transform: scale(0.9);
+    transform-origin: top center;
+}
+
+.education-title {
+    font-family: 'swell-regular';
+    font-size: 80px;
+    text-shadow: 0 0 40px aqua;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Cards Container */
+.education-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 60px;
+}
+
+/* Card Style */
+.edu-card {
+    width: 420px;
+    padding: 30px;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.2);
+    border: 1px solid rgba(0, 255, 255, 0.25);
+    transition:transform 0.35s ease, box-shadow 0.3s ease;
+    cursor: default;
+    transform: translateZ(0);
+}
+
+/* Hover animation */
+.edu-card:hover {
+    transform: scale(1.12);
+    box-shadow: 0 0 55px rgb(0, 255, 255);
+}
+
+/* Header (degree + year) */
+.edu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.edu-header h3 {
+    font-family: 'swell-regular';
+    font-size: 28px;
+    color: aqua;
+    text-shadow: 0 0 20px aqua;
+    max-width: 280px;
+    text-align: left;
+}
+
+.edu-year {
+    font-size: 16px;
+    color: white;
+    opacity: 0.7;
+    font-family: 'Colombo';
+}
+
+/* College Name */
+.edu-college {
+    font-family: 'Colombo';
+    font-size: 18px;
+    color: white;
+    opacity: 0.9;
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* CGPA */
+.edu-cgpa {
+    margin-top: 12px;
+    font-size: 19px;
+    color: white;
+    text-align: left;
+    font-family: 'Colombo';
+}
+
+.edu-cgpa span {
+    color: aqua;
+    font-weight: bold;
+    text-shadow: 0 0 15px aqua;
+}
