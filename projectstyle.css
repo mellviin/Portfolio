@@ -1,3 +1,4 @@
+
 @font-face {
   font-family: 'swell-regular';
   src: url('fonts/swell-regular.otf') format('opentype');
@@ -8,24 +9,55 @@
 /* ===== PROJECTS SECTION ===== */
 .projects-section {
   width: 100%;
-  padding-top: 100px;
+  padding-top: 120px;
+  PADDING-BOTTOM: 20px;
   text-align: center;
   background: transparent;
   color: white;
   position: relative;
   z-index: 9999;
   overflow: hidden;
+
 }
 
 /* ===== Section Title ===== */
 .section-title {
   font-family: 'swell-regular', sans-serif;
-  font-size: 200px;
+  font-size: 180px;       /* FIXED from 0px */
   font-weight: bold;
   color: rgb(255, 255, 255);
-  text-shadow: 0 0 200px aqua;
-  margin-bottom: 70px;
+  text-shadow: 0 0 20px aqua;
+  margin-bottom: 30px;
 }
+
+
+.cinematic-line {
+  width: 420px;                    /* adjust as needed */
+  height: 3px;
+  margin-left: -390px;
+  margin-top: -280px;
+
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.1),
+    rgba(0, 0, 0, 0)
+  );
+
+  border-radius: 50px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeLine 1.5s ease forwards;
+}
+
+@keyframes fadeLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* ===== Carousel Wrapper ===== */
 .carousel-wrapper {
@@ -33,6 +65,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  
+  /* 75% full section shrink */
+  transform: scale(0.75);
+  transform-origin: top center;
 }
 
 .carousel {
@@ -52,14 +88,14 @@
   align-items: center;
   justify-content: flex-start;
   gap: 40px;
-  flex: 0 0 2600px;
+  flex: 0 0 650px;
   transition: all 0.5s ease;
   overflow: visible;
 }
 
 /* ===== Project Card ===== */
 .project-card {
-  flex: 0 0 1300px;
+  flex: 0 0 325px;
   background: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   overflow: hidden;
@@ -73,13 +109,12 @@
   transform: scale(1);
   filter: blur(0) brightness(1);
   opacity: 1;
-  box-shadow: 0 0 200px rgba(0, 255, 255, 0.326);
 }
 
-/* ===== Project Image Frame ===== */
+/* ===== Image Frame ===== */
 .project-frame {
   width: 100%;
-  height: 1350px; 
+  height: 337.5px; 
   overflow: hidden;
   border-radius: 0px;
   background: rgba(255, 255, 255, 0.05);
@@ -97,42 +132,41 @@
   transform: scale(1.05);
 }
 
-/* ===== Project Info (Title + Desc outside the card) ===== */
+/* ===== Project Info ===== */
 .project-info {
   text-align: center;
-  color: white;
+  color: rgba(255, 255, 255, 0.534);
   width: 90%;
   max-width: 1800px;
-  margin-top: 60px;
+  margin-top: -30px;
   position: relative;
   z-index: 9999;
   transition: all 0.5s ease;
 }
 
 .project-info h3 {
-  font-size: 100px;
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 200px aqua;
-  font-family: 'Colombo', sans-serif;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.534);
+  font-family: 'swell-regular', sans-serif;
   margin-bottom: 25px;
 }
 
 .project-info p {
-  font-size: 58px;
+  font-size: 20.5px;
   font-family: 'Colombo', sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.534);
   line-height: 1.5;
   margin: 10px 0;
 }
 
 .project-info .tech {
-  font-size: 46px;
+  font-size: 19px !important;
   color: #00ffff;
   font-style: italic;
   margin-top: 20px;
 }
 
-/* ===== Fade effect for active card ===== */
+/* Faded inactive */
 .project-container:not(.active) .project-info {
   opacity: 0.4;
   transform: translateY(30px);
@@ -141,125 +175,16 @@
 .project-container.active .project-info {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-/* ===== Carousel Scroll Buttons ===== */
-.scroll-btn {
-  background: transparent;
-  border: none;
-  color: white;
-  font-size: 140px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  z-index: 50;
-  opacity: 0.7;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-.scroll-btn:hover {
-  color: rgb(255, 255, 255);
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-  opacity: 1;
-}
-
-.left-btn {
-  left: 80px;
-}
-
-.right-btn {
-  right: 80px;
-}
-
-/* ===== Responsive Design ===== */
-@media (max-width: 1600px) {
-  .section-title {
-    font-size: 160px;
-  }
-
-  .project-info h3 {
-    font-size: 70px;
-  }
-
-  .project-info p {
-    font-size: 46px;
-  }
-
-  .project-info .tech {
-    font-size: 38px;
-  }
-
-  .project-frame {
-    height: 950px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .project-container {
-    flex: 0 0 90vw;
-  }
-
-  .project-frame {
-    height: 700px;
-  }
-
-  .project-info h3 {
-    font-size: 60px;
-  }
-
-  .project-info p {
-    font-size: 38px;
-  }
-
-  .project-info .tech {
-    font-size: 30px;
-  }
-
-  .scroll-btn {
-    font-size: 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .section-title {
-    font-size: 120px;
-  }
-
-  .project-frame {
-    height: 500px;
-  }
-
-  .project-info {
-    width: 95%;
-  }
-
-  .project-info h3 {
-    font-size: 48px;
-  }
-
-  .project-info p {
-    font-size: 32px;
-  }
-
-  .project-info .tech {
-    font-size: 28px;
-  }
-
-  .scroll-btn {
-    font-size: 80px;
-    left: 30px;
-    right: 30px;
-  }
-}
+/* ===== GitHub Button ===== */
 .github-btn {
   display: inline-flex;
   align-items: center;
   gap: 20px;
-  margin-top: 40px;
-  padding: 20px 60px;
-  font-size: 54px;
+  margin-top: 20px;
+  padding: 16px 40px;
+  font-size: 13.5px;
   color: black;
   background: cyan;
   border-radius: 15px;
@@ -271,7 +196,7 @@
 }
 
 .github-btn i {
-  font-size: 58px;
+  font-size: 14.5px;
 }
 
 .github-btn:hover {
@@ -281,4 +206,27 @@
   box-shadow: 0 0 60px rgba(0, 255, 255, 0.599);
 }
 
+/* Navigation Buttons */
+.scroll-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 35px;
+  text-shadow: 0 0 50px aqua;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 50;
+  opacity: 1;
+  position: absolute;
+  top: 25%;
+  transform: translateY(-50%);
+}
 
+.scroll-btn:hover {
+  color: white;
+  text-shadow: 0 0 20px white;
+  opacity: 1;
+}
+
+.left-btn { left: 80px; }
+.right-btn { right: 80px; }
