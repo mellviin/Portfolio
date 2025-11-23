@@ -1,11 +1,10 @@
-
 /* ===== CONTACT SECTION (GRID-X STYLE) ===== */
 .contact-section {
   min-height: auto;
   height: 80vh;
   background: rgba(0, 0, 0, 0);
   display: flex;
-  padding: 0px 8% 20px; /* 👈 reduced top padding from 150px to 60px */
+  padding: 0px 8% 20px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -16,12 +15,13 @@
   transform-origin: top center;
 }
 
+/* Wrapper */
 .contact-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
-  padding: 0px 0px 0px 0px;
+  padding: 0px;
   width: 100%;
   max-width: 3800px;
   height: 100%;
@@ -43,10 +43,10 @@
   font-size: 57.5px;
   color: rgb(255, 255, 255);
   text-shadow: 0 0 20px aqua;
-  justify-content: center;
   margin-bottom: 40px;
 }
 
+/* Contact Items */
 .contact-item {
   display: flex;
   align-items: center;
@@ -56,7 +56,6 @@
 
 .contact-item .icon {
   font-size: 30px;
-  font-style: normal;
 }
 
 .contact-item p {
@@ -99,7 +98,7 @@
   transform: scale(1.2);
 }
 
-/* Tooltip style (animated hologram float) */
+/* Tooltip */
 .social-icons a::after {
   content: attr(data-tooltip);
   position: absolute;
@@ -115,7 +114,6 @@
   visibility: hidden;
   transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
   white-space: nowrap;
-  font-family: 'Colombo', sans-serif;
   box-shadow: 0 0 25px cyan;
   pointer-events: none;
 }
@@ -145,23 +143,22 @@
   text-shadow: 0 0 20px aqua;
   text-align: left;
   font-family: 'swell-regular', sans-serif;
-  align-items: center;
 }
 
 .contact-title span {
   color: cyan;
-  text-shadow: 0 0 20px rgb(255, 255, 255);
+  text-shadow: 0 0 20px white;
   display: flex;
   align-items: center;
   gap: 5px;
 }
 
+/* Form */
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  justify-content: center;
 }
 
 .contact-form input,
@@ -170,12 +167,11 @@
   padding: 7px 8.75px;
   font-size: 15.5px;
   background: rgba(255, 255, 255, 0.07);
-  border: 2px solid rgba(0, 255, 255, 0);
+  border: 2px solid transparent;
   border-radius: 20px;
   color: white;
   outline: none;
   transition: all 0.3s ease;
-  font-family: 'Colombo', sans-serif;
 }
 
 .contact-form input:hover,
@@ -186,7 +182,6 @@
 .contact-form input:focus,
 .contact-form textarea:focus {
   border-color: cyan;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0);
   width: 72%;
 }
 
@@ -199,7 +194,6 @@
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Colombo', sans-serif;
 }
 
 .contact-form button:hover {
@@ -208,24 +202,106 @@
   box-shadow: 0 0 25px cyan;
 }
 
-/* ===== Responsive ===== */
+/* ===================================================== */
+/* =============== RESPONSIVE FULL DEVICE FIX ========== */
+/* ===================================================== */
+
+/* Tablets & Medium Screens */
 @media (max-width: 1200px) {
+  .contact-section {
+    transform: scale(0.85);
+  }
   .contact-wrapper {
     flex-direction: column;
-    align-items: center;
+    gap: 40px;
   }
-
   .contact-left,
   .contact-right {
     width: 100%;
   }
-
   .contact-title {
-    font-size: 120px;
+    font-size: 80px;
     text-align: center;
   }
+}
 
+/* Large Phones */
+@media (max-width: 900px) {
+  .contact-section {
+    transform: scale(0.95);
+    height: auto;
+  }
+  .contact-wrapper {
+    flex-direction: column;
+  }
+  .contact-title {
+    font-size: 60px;
+  }
+  .contact-left h3 {
+    font-size: 45px;
+  }
+  .contact-item p {
+    font-size: 18px;
+  }
   .social-icons a {
-    font-size: 70px;
+    font-size: 40px;
+  }
+}
+
+/* Small Phones (MOST IMPORTANT FIX) */
+@media (max-width: 600px) {
+  .contact-section {
+    transform: scale(1); /* Full scale */
+    padding-top: 80px;
+    height: auto;
+  }
+  .contact-wrapper {
+    gap: 20px;
+  }
+  .contact-left,
+  .contact-right {
+    height: auto;
+    padding: 20px;
+  }
+  .contact-left h3,
+  .contact-title {
+    font-size: 40px;
+    text-align: center;
+  }
+  .contact-item {
+    gap: 15px;
+  }
+  .contact-form input,
+  .contact-form textarea {
+    width: 90%;
+    font-size: 14px;
+  }
+  .contact-form input:hover,
+  .contact-form textarea:hover,
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    width: 92%;
+  }
+  .social-icons a {
+    font-size: 28px;
+  }
+}
+
+/* Ultra-small phones */
+@media (max-width: 400px) {
+  .contact-title {
+    font-size: 32px;
+  }
+  .contact-left h3 {
+    font-size: 30px;
+  }
+  .contact-item p {
+    font-size: 14px;
+  }
+  .social-icons {
+    gap: 18px;
+  }
+  .social-icons a {
+    font-size: 24px;
   }
 }
