@@ -4,16 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Melvin V | 3D & Full-Stack Developer</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="projectstyle.css">
-  <link rel="stylesheet" href="contactstyle.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./projectstyle.css">
+  <link rel="stylesheet" href="./skillstyle.css">
+  <link rel="stylesheet" href="./contactstyle.css">
+  <link rel="stylesheet" href="./educationstyle.css">
   <!-- Add this inside <head> -->
  <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css"
 />
 
-  <style>
+<!--  <style>
 /* ===== Smooth Scroll Fade + Scale Animation (Fixed Alignment) ===== */
 section {
   opacity: 0;
@@ -32,20 +34,30 @@ section.visible {
   transform: scale(1) translateY(0);
 }
 
-  </style>
+  </style>-->
 </head>
 <body>
+
+<!-- === GLOBAL THREE.JS BACKGROUND === -->
+<div id="bg-canvas"></div>
   
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <div class="nav-container">
-    <h1 class="logo" style="font-family: 'Colombo',sans-serif; font-size: 80px;">Portfolio</h1>
+    <h1 class="logo" style="font-family: 'Colombo',sans-serif; font-size: 20px;">Portfolio</h1>
     <ul class="nav-links">
       <li><a href="#home" class="active">Home</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li>
+        <a href="./MelvinV.pdf" download class="nav-resume-btn">
+        Get Resume
+        </a>
+      </li>
+
     </ul>
     <div class="menu-toggle">&#9776;</div>
   </div>
@@ -55,9 +67,10 @@ section.visible {
   <!-- ===== HOME SECTION ===== -->
   <section id="home" class="home-section">
     <!-- <img class="name" src="bg/Land_img.png" alt="Background"> -->
-    <h1 id="greeting" style="font-family: 'swell', sans-serif; font-size: 150px;">Hi! I'm <br> <span style="font-weight: bolder; font-size: 450px; color: aqua;">Melvin V</span></h1>
+    <h1 id="greeting" style=" font-size: 52.5px;">Hi! I'm <br> <span>Melvin V</span></h1>
     <p id="typewriter"></p>
-    <p id="tagline">Full-Stack Developer | M.Sc. Computer Science</p>
+    <p id="tagline">Full-Stack Developer<br><span>Code. Create. Inspire.</span></p>
+    <a href="./MelvinV.pdf" download class="resume-btn">Download Resume</a>
   </section>
 
   <!-- ===== ABOUT SECTION ===== -->
@@ -79,7 +92,7 @@ section.visible {
   </style>
 
     <h2 class="about-title">About Me</h2>
-    <p style="font-size: 68px; top: 0px; text-align: left; margin-left: 0px; margin-right: 0px;color: white; text-shadow: 0 0 200px aqua;" id="abt-cnt">Hello! I'm <strong>Melvin V</strong> — a <strong>3D and Full-Stack Developer</strong> driven by curiosity, creativity, and a passion for merging art with technology.
+    <p style="font-size: 17px; top: 0px; text-align: left; margin-left: 0px; margin-right: 0px; color:  rgba(255, 255, 255, 0.534); text-shadow: 0 0 200px aqua;" id="abt-cnt">Hello! I'm <strong>Melvin V</strong> — a <strong>3D and Full-Stack Developer</strong> driven by curiosity, creativity, and a passion for merging art with technology.
       With a <strong>Master’s degree in Computer Science (M.Sc.)</strong>, I’ve developed a strong foundation in software development, interactive media, and artificial intelligence.<br>
       My journey in tech started with designing small web applications and exploring how visual elements can come alive through code. 
       Over time, I grew fascinated by the blend of <strong>3D graphics</strong>, <strong>animation</strong>, and <strong>interactive web experiences</strong>. 
@@ -98,9 +111,37 @@ section.visible {
     </p>
   </section>
 
+  <!-- ===== EDUCATION SECTION ===== -->
+<section id="education" class="education-section">
+    <h2 class="education-title">Education</h2>
+    <div class="cinematic-line"></div>
+
+    <div class="education-cards">
+
+        <div class="edu-card">
+            <div class="edu-header">
+                <h3>M.Sc. Computer Science</h3>
+                <span class="edu-year">2024 – Present</span>
+            </div>
+            <p class="edu-college">St. Joseph’s University</p>
+        </div>
+
+        <div class="edu-card">
+            <div class="edu-header">
+                <h3>Bachelor of Computer Applications (B.C.A.)</h3>
+                <span class="edu-year">2021 – 2024</span>
+            </div>
+            <p class="edu-college">St. Francis College</p>
+        </div>
+
+    </div>
+</section>
+
+
   <!-- ===== PROJECTS SECTION ===== -->
  <section id="projects" class="projects-section">
-  <h2 class="section-title" style="padding-top: 100px; padding-bottom: 50px; text-shadow: 0 0 15 aqua;">Projects</h2>
+  <h2 class="section-title" style=" text-shadow: 0 0 15 aqua; font-size: 50px;">Projects</h2>
+  <div class="cinematic-line"></div>
 
   <div class="carousel-wrapper">
     <button class="scroll-btn left-btn">◀</button>
@@ -112,9 +153,9 @@ section.visible {
         <div class="project-card">
           <div class="project-frame">
             <img 
-              src="project_frame/resume.png" 
-              data-gif="project_frame/Resume.gif" 
-              data-still="project_frame/resume.png" 
+              src="./project_frame/resume.png" 
+              data-gif="./project_frame/Resume.gif" 
+              data-still="./project_frame/resume.png" 
               alt="AI Resume Builder">
           </div>
         </div>
@@ -136,7 +177,7 @@ section.visible {
         <div class="project-card">
           <div class="project-frame">
             <img 
-              src="project_frame/VirtuAuth.png" 
+              src="./project_frame/VirtuAuth.png" 
               data-gif="project_frame/virtuauth_gif.gif" 
               data-still="project_frame/VirtuAuth.png" 
               alt="VirtuAuth 3D Login">
@@ -158,7 +199,7 @@ section.visible {
       <div class="project-container">
         <div class="project-card">
           <div class="project-frame">
-            <img src="project_frame/AirPaint.png" alt="Air Paint">
+            <img src="./project_frame/AirPaint.png" alt="Air Paint">
           </div>
         </div>
         <div class="project-info">
@@ -176,7 +217,7 @@ section.visible {
       <div class="project-container">
         <div class="project-card">
           <div class="project-frame">
-            <img src="project_frame/AI_sentiment.png" alt="AI Sentiment Analysis Project">
+            <img src="./project_frame/AI_sentiment.png" alt="AI Sentiment Analysis Project">
           </div>
         </div>
         <div class="project-info">
@@ -196,7 +237,7 @@ section.visible {
       <div class="project-container">
         <div class="project-card">
           <div class="project-frame">
-            <img src="project_frame/research.jpeg" alt="Deepfake Detection">
+            <img src="./project_frame/research.jpeg" alt="Deepfake Detection">
           </div>
         </div>
         <div class="project-info">
@@ -215,7 +256,7 @@ section.visible {
       <div class="project-container">
         <div class="project-card">
           <div class="project-frame">
-            <img src="project_frame/library_thumb.png" alt="Library Management System">
+            <img src="./project_frame/library_thumb.png" alt="Library Management System">
           </div>
         </div>
         <div class="project-info">
@@ -231,18 +272,23 @@ section.visible {
   </div>
 </section>
 
-
-
-
   <!-- ===== SKILLS SECTION ===== -->
-<section id="skills">
-  <h2 style="top: 10px; padding-left: 400px; font-size: 200px; text-shadow: aqua 0 0 200px;"><span style="color: aqua; text-shadow: rgb(255, 255, 255) 0 0 200px;">Skills</span> & Tools</h2>
+<section id="skills" class="skill-section" style="
+  padding-top: 120px;
+  margin-bottom: 20px;">
+<h2 class="skills-title">
+  <span class="main-title" style="color: aqua;">Skills</span>&nbsp; <span class="main-title"> & Tools</span>
+  <div class="skills-tagline">A blend of engineering, creativity,<br> and problem-solving.</div>
+</h2>
+<div class="cinematic-line"></div>
+
   <div id="skills-container">
     <div class="sphere-viewport" style="width: 500%; height: 500%;">
       <div id="skills-sphere" class="sphere" role="group" aria-label="3D skill sphere" ></div>
     </div>
   </div>
 </section>
+
   
 <!-- ===== CONTACT SECTION ===== -->
 <section id="contact" class="contact-section">
@@ -311,8 +357,8 @@ section.visible {
   <script type="module" src="./script.js"></script>
 <style>
 .sphere-viewport {
-  width: 60px;             /* base size */
-  height: 60px;
+  width: 15px;             /* base size */
+  height: 15px;
   position: relative;
   transform-style: preserve-3d;
   transform: scale(6.5);   /* visual scale */
@@ -334,7 +380,7 @@ section.visible {
 </style>
 
 <script>
-const SCALE = 6.5; // match CSS scale
+const SCALE = 1.6; // match CSS scale
 
 const SKILLS = [ 
   { t: "JavaScript", w: 28 },
@@ -347,26 +393,45 @@ const SKILLS = [
   { t: "Express", w: 14 },
   { t: "Python", w: 16 },
   { t: "Flask", w: 12 },
+  { t: "Django", w: 12 },
   { t: "Java", w: 12 },
   { t: "Spring Boot", w: 10 },
-  { t: "MySQL", w: 10 },
-  { t: "Git", w: 12 },
-  { t: "Figma", w: 10 },
-  { t: "Blender", w: 12 },
-  { t: "Machine Learning", w: 10 },
-  { t: "WebGL", w: 10 },
-  { t: "TypeScript", w: 14 },
-  { t: "Django", w: 9 },
-  { t: "GraphQL", w: 10 },
-  { t: "Docker", w: 10 },
-  { t: "AWS", w: 10 },
-  { t: "Photoshop", w: 9 },
   { t: "C++", w: 9 },
-  { t: "SQL", w: 10 }
+  { t: "SQL", w: 10 },
+  { t: "MySQL", w: 10 },
+  { t: "MongoDB", w: 12 },         // NEW
+  { t: "PostgreSQL", w: 11 },      // NEW
+  { t: "Git", w: 12 },
+  { t: "GitHub", w: 11 },          // NEW
+  { t: "AWS", w: 10 },
+  { t: "Firebase", w: 11 },        // NEW
+  { t: "Docker", w: 10 },
+  { t: "Kubernetes", w: 9 },       // NEW
+  { t: "GraphQL", w: 10 },
+  { t: "REST API", w: 14 },        // NEW
+  { t: "JSON", w: 11 },            // NEW
+  { t: "WebSockets", w: 10 },      // NEW
+  { t: "WebGL", w: 10 },
+  { t: "Blender", w: 12 },
+  { t: "3D Animation", w: 12 },    // NEW
+  { t: "Shader Programming", w: 10 }, // NEW
+  { t: "GLSL", w: 10 },            // NEW
+  { t: "Machine Learning", w: 10 },
+  { t: "Deep Learning", w: 10 },   // NEW
+  { t: "TensorFlow", w: 9 },       // NEW
+  { t: "PyTorch", w: 9 },          // NEW
+  { t: "NumPy", w: 9 },            // NEW
+  { t: "Pandas", w: 10 },          // NEW
+  { t: "OpenCV", w: 12 },          // NEW
+  { t: "MediaPipe", w: 11 },       // NEW
+  { t: "Photoshop", w: 9 },
+  { t: "Figma", w: 10 },
+  { t: "UI/UX", w: 10 }            // NEW
 ];
 
+
 const sphere = document.getElementById('skills-sphere');
-const RADIUS = 180;
+const RADIUS = 45;
 
 function createSphere() {
   sphere.innerHTML = '';
@@ -377,7 +442,7 @@ function createSphere() {
     tag.className = 'tag';
     tag.textContent = skill.t;
     tag.style.fontFamily = 'Times New Roman, Times, serif';
-    tag.style.fontSize = `${12 + skill.w}px`;
+    tag.style.fontSize = `${(12 + skill.w)*0.50}px`;
     tag.style.opacity = 0.95;
     tag.style.transition = 'color 0.2s ease';
 
@@ -430,12 +495,12 @@ viewport.addEventListener('mousemove', (e)=>{
 
 // Floating parameters
 let floatOffset = 0;
-let floatDirection = 1;
+let floatDirection = 0;
 
 function animateSphere() {
   // Subtle floating
   floatOffset += 0.2 * floatDirection;
-  if(floatOffset > 10 || floatOffset < -10) floatDirection *= -1;
+  if(floatOffset > 8 || floatOffset < -8) floatDirection *= -1;
 
   // Smooth rotation
   rotX += (targetX - rotX) * 0.08;
@@ -591,7 +656,7 @@ window.addEventListener("scroll", () => {
 
   </script>
 
-<script>
+<!--<script>
 // ===== Repeated Scroll Reveal Animation =====
 document.addEventListener("DOMContentLoaded", () => {
   const sections = document.querySelectorAll("section");
@@ -608,7 +673,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   sections.forEach(section => observer.observe(section));
 });
-</script>
+</script> -->
 
 <script>
 document.querySelectorAll('.social-icons a').forEach(link => {
@@ -696,7 +761,5 @@ function validateForm(event) {
   return false;
 }
 </script>
-
-
 </body>
 </html>
