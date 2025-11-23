@@ -8,8 +8,6 @@ import { FilmPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postproce
 import { ShaderPass } from "https://unpkg.com/three@0.158.0/examples/jsm/postprocessing/ShaderPass.js";
 import { FXAAShader } from "https://unpkg.com/three@0.158.0/examples/jsm/shaders/FXAAShader.js";
 
-
-
 // ---- Scene setup ----
 const scene = new THREE.Scene();
 
