@@ -126,12 +126,12 @@ const loader = new GLTFLoader();
 
 // ---- Floating Models ----
 const modelConfigs = [
-  { file: '/models/animated_man.glb', scale: 0.01, radius: 0.8, isAstronaut: true },
-  { file: '/models/sci-fi_computer.glb', scale: 0.1 },
-  { file: '/models/rock1.glb', scale: 0.01, radius: 0.8 },
-  { file: '/models/rock1.glb', scale: 0.005, radius: 0.1 },
-  { file: '/models/rock1.glb', scale: 0.008, radius: 0.05 },
-  { file: '/models/rock1.glb', scale: 0.02, radius: 0.4 },
+  { file: './models/animated_man.glb', scale: 0.01, radius: 0.8, isAstronaut: true },
+  { file: './models/sci-fi_computer.glb', scale: 0.1 },
+  { file: './models/rock1.glb', scale: 0.01, radius: 0.8 },
+  { file: './models/rock1.glb', scale: 0.005, radius: 0.1 },
+  { file: './models/rock1.glb', scale: 0.008, radius: 0.05 },
+  { file: './models/rock1.glb', scale: 0.02, radius: 0.4 },
 ];
 
 const models = [];
