@@ -1,12 +1,13 @@
-import * as THREE from "https://cdn.skypack.dev/three@0.158.0";
-import { GLTFLoader } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/loaders/GLTFLoader.js";
-import { OrbitControls } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/controls/OrbitControls.js";
-import { EffectComposer } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/postprocessing/EffectComposer.js";
-import { RenderPass } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/postprocessing/RenderPass.js";
-import { UnrealBloomPass } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/postprocessing/UnrealBloomPass.js";
-import { FilmPass } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/postprocessing/FilmPass.js";
-import { ShaderPass } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/postprocessing/ShaderPass.js";
-import { FXAAShader } from "https://cdn.skypack.dev/three@0.158.0/examples/jsm/shaders/FXAAShader.js";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.module.js";
+import { GLTFLoader } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/loaders/GLTFLoader.js";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/controls/OrbitControls.js";
+import { EffectComposer } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/postprocessing/EffectComposer.js";
+import { RenderPass } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/postprocessing/RenderPass.js";
+import { UnrealBloomPass } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/postprocessing/UnrealBloomPass.js";
+import { FilmPass } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/postprocessing/FilmPass.js";
+import { ShaderPass } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/postprocessing/ShaderPass.js";
+import { FXAAShader } from "https://cdn.jsdelivr.net/npm/three@0.158.0/examples/jsm/shaders/FXAAShader.js";
+
 
 
 // ---- Scene setup ----
