@@ -128,12 +128,12 @@ const loader = new GLTFLoader();
 
 // ---- Floating Models ----
 const modelConfigs = [
-  { file: './models/animated_man.glb', scale: 0.01, radius: 0.8, isAstronaut: true },
-  { file: './models/sci-fi_computer.glb', scale: 0.1 },
-  { file: './models/rock1.glb', scale: 0.01, radius: 0.8 },
-  { file: './models/rock1.glb', scale: 0.005, radius: 0.1 },
-  { file: './models/rock1.glb', scale: 0.008, radius: 0.05 },
-  { file: './models/rock1.glb', scale: 0.02, radius: 0.4 },
+  { file: '/Portfolio/models/animated_man.glb', scale: 0.01, radius: 0.8, isAstronaut: true },
+  { file: '/Portfolio/models/sci-fi_computer.glb', scale: 0.1 },
+  { file: '/Portfolio/models/rock1.glb', scale: 0.01, radius: 0.8 },
+  { file: '/Portfolio/models/rock1.glb', scale: 0.005, radius: 0.1 },
+  { file: '/Portfolio/models/rock1.glb', scale: 0.008, radius: 0.05 },
+  { file: '/Portfolio/models/rock1.glb', scale: 0.02, radius: 0.4 },
 ];
 
 const models = [];
@@ -245,7 +245,7 @@ let spaceshipLight = null;
 let spaceshipClock = new THREE.Clock();
 const flightDuration = 30;
 
-loader.load('./models/star_wars_ship.glb', (gltf) => {
+loader.load('/Portfolio/models/star_wars_ship.glb', (gltf) => {
   spaceship = gltf.scene;
   spaceship.scale.set(4.8, 4.8, 4.8);
   spaceship.position.set(0, 0, -5);
